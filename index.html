@@ -1,11 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-  <title>Meine Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Journal Rat Race</title>
+
+<style>
+
+body{
+    background:#e8e3d6;
+    margin:0;
+    padding:0;
+    font-family:"Times New Roman", serif;
+    color:#111;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+}
+
+header{
+    text-align:center;
+    border-bottom:4px double black;
+    padding:20px;
+    background:#ddd6c8;
+}
+
+header h1{
+    font-size:4rem;
+    margin:0;
+    letter-spacing:2px;
+}
+
+.subline{
+    margin-top:10px;
+    font-style:italic;
+    font-size:1.1rem;
+}
+
+.info{
+    margin-top:10px;
+    font-size:0.9rem;
+}
+
+.hero-image{
+    width:100%;
+    max-height:350px;
+    object-fit:cover;
+    filter:grayscale(100%) contrast(110%);
+    border-bottom:3px solid black;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.article{
+    background:#f5f1e8;
+    border:1px solid #222;
+    padding:20px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:3px 3px 0px rgba(0,0,0,0.2);
+}
+
+.article:hover{
+    transform:translateY(-4px);
+    background:#ece6d8;
+}
+
+.article h2{
+    margin-top:0;
+    font-size:1.8rem;
+    border-bottom:1px solid black;
+    padding-bottom:10px;
+}
+
+.preview{
+    font-size:1rem;
+    line-height:1.5;
+}
+
+.content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.6s ease;
+    margin-top:15px;
+    border-top:1px dashed black;
+}
+
+.content p{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+footer{
+    margin-top:40px;
+    padding:20px;
+    text-align:center;
+    border-top:3px double black;
+    font-size:0.9rem;
+    background:#ddd6c8;
+}
+
+@media(max-width:700px){
+
+header h1{
+    font-size:2.5rem;
+}
+
+.article h2{
+    font-size:1.5rem;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <h1>Die Revolution beginnt hier</h1>
-  <p>Meine erste sozialistische Website</p>
-  <img src="RatRace.png" alt="Rat Race" width="800">
+
+<header>
+
+<h1>JOURNAL RAT RACE</h1>
+
+<div class="subline">
+„Scheiß Gesellschaft macht mich krank, ich bin ein Punk.“
+</div>
+
+<div class="info">
+Ausgabe #1 — 2026 — Revolutionäre philosophische Arbeiterzeitung
+</div>
+
+</header>
+
+<img src="RatRace.png" class="hero-image">
+
+<div class="container">
+
+<div class="grid">
+
+<div class="article" onclick="toggleArticle(this)">
+<h2>Gründe antikapitalistisch zu sein</h2>
+
+<div class="preview">
+Warum Armut, Isolation und Entfremdung keine Naturgesetze sind.
+</div>
+
+<div class="content">
+<p>
+Der Kapitalismus organisiert Produktion nicht nach Bedürfnissen,
+sondern nach Profitabilität. Während Überproduktion und Leerstand existieren,
+fehlen gleichzeitig Wohnungen, Nahrung und medizinische Versorgung.
+</p>
+
+<p>
+Die Frage lautet nicht ob genug vorhanden ist,
+sondern wem Produktionsmittel gehören und wer über ihre Nutzung entscheidet.
+</p>
+</div>
+</div>
+
+<div class="article" onclick="toggleArticle(this)">
+<h2>Pix — eine sozialistische Maßnahme?</h2>
+
+<div class="preview">
+Warum ein staatliches Bezahlsystem Bankenlogik teilweise unterläuft.
+</div>
+
+<div class="content">
+<p>
+Pix zeigt, dass digitale Infrastruktur nicht zwangsläufig privat organisiert werden muss.
+Millionen Menschen nutzen ein System, das unmittelbar und ohne hohe Gebühren funktioniert.
+</p>
+
+<p>
+Die Existenz von Pix wirft die Frage auf,
+warum grundlegende gesellschaftliche Infrastruktur überhaupt profitorientiert organisiert wird.
+</p>
+</div>
+</div>
+
+<div class="article" onclick="toggleArticle(this)">
+<h2>Meinung: Manfred die Ratte will nicht mehr</h2>
+
+<div class="preview">
+Eine Reflexion über Erschöpfung, Hamsterräder und moderne Arbeit.
+</div>
+
+<div class="content">
+<p>
+Manfred wacht auf, arbeitet, konsumiert,
+schläft und beginnt erneut. Irgendwann merkt er,
+dass das Leben auf Reproduktion der Arbeitskraft reduziert wurde.
+</p>
+
+<p>
+Die Ratte verweigert nicht das Leben —
+sie verweigert lediglich das Rad.
+</p>
+</div>
+</div>
+
+<div class="article" onclick="toggleArticle(this)">
+<h2>Meine Lieblingsmemes</h2>
+
+<div class="preview">
+Internetkultur zwischen Klassenbewusstsein und kollektiver Verzweiflung.
+</div>
+
+<div class="content">
+<p>
+Memes sind digitale Graffiti.
+Sie verdichten politische Gefühle, Widersprüche und kollektive Frustration
+in wenigen Bildern und Sätzen.
+</p>
+
+<p>
+Manche Memes sind oberflächlich.
+Andere treffen präziser als Leitartikel.
+</p>
+</div>
+</div>
+
+<div class="article" onclick="toggleArticle(this)">
+<h2>Scheiß Gesellschaft macht mich krank, ich bin ein Punk</h2>
+
+<div class="preview">
+Über psychischen Druck, Anpassungszwang und Verweigerung.
+</div>
+
+<div class="content">
+<p>
+Eine Gesellschaft, die Konkurrenz zur Normalität macht,
+erzeugt Isolation als Massenphänomen.
+</p>
+
+<p>
+Punk war nie nur Musik.
+Es war immer auch die Verweigerung,
+sich vollständig in ökonomische Funktionen verwandeln zu lassen.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+Journal Rat Race — Gegen Entfremdung, Konkurrenz und das Hamsterrad.
+</footer>
+
+<script>
+
+function toggleArticle(article){
+
+const content = article.querySelector(".content");
+
+if(content.style.maxHeight){
+    content.style.maxHeight = null;
+}
+else{
+    content.style.maxHeight = content.scrollHeight + "px";
+}
+
+}
+
+</script>
+
 </body>
 </html>

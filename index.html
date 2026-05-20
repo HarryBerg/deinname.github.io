@@ -9,116 +9,145 @@
 <style>
 
 body{
-    background:#e8e3d6;
     margin:0;
-    padding:0;
-    font-family:"Times New Roman", serif;
+    background:#ece7db;
     color:#111;
+    font-family:"Times New Roman", serif;
     background-image:
-    linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03)),
-    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    linear-gradient(rgba(0,0,0,0.03), rgba(0,0,0,0.03));
 }
 
-header{
+.page{
+    max-width:1400px;
+    margin:auto;
+    background:#f4efe2;
+    padding:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.topline{
     text-align:center;
-    border-bottom:4px double black;
-    padding:20px;
-    background:#ddd6c8;
+    font-size:14px;
+    border-bottom:1px solid black;
+    padding-bottom:5px;
 }
 
-header h1{
-    font-size:4rem;
-    margin:0;
+.logo{
+    text-align:center;
+    font-size:82px;
+    font-weight:bold;
+    line-height:1;
+    margin-top:10px;
+}
+
+.subtitle{
+    text-align:center;
     letter-spacing:2px;
+    font-size:14px;
+    margin-bottom:10px;
 }
 
-.subline{
-    margin-top:10px;
-    font-style:italic;
-    font-size:1.1rem;
+.meta{
+    display:flex;
+    justify-content:space-between;
+    border-top:1px solid black;
+    border-bottom:3px double black;
+    padding:5px;
+    font-size:12px;
 }
 
-.info{
-    margin-top:10px;
-    font-size:0.9rem;
+.layout{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:15px;
+    margin-top:15px;
+}
+
+.column{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.article{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.article:hover{
+    opacity:0.8;
+}
+
+.article h2{
+    font-size:42px;
+    margin:0 0 10px 0;
+    line-height:1;
+}
+
+.side-title{
+    font-size:28px !important;
+}
+
+.article p{
+    text-align:justify;
+    font-size:15px;
+    line-height:1.4;
+}
+
+.fake-text{
+    color:#444;
+    font-size:13px;
+    line-height:1.3;
+    text-align:justify;
 }
 
 .hero-image{
     width:100%;
-    max-height:350px;
-    object-fit:cover;
-    filter:grayscale(100%) contrast(110%);
-    border-bottom:3px solid black;
+    filter:grayscale(100%) contrast(115%);
+    border:1px solid black;
+    margin-bottom:10px;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-.article{
-    background:#f5f1e8;
-    border:1px solid #222;
-    padding:20px;
-    cursor:pointer;
-    transition:0.3s;
-    box-shadow:3px 3px 0px rgba(0,0,0,0.2);
-}
-
-.article:hover{
-    transform:translateY(-4px);
-    background:#ece6d8;
-}
-
-.article h2{
-    margin-top:0;
-    font-size:1.8rem;
-    border-bottom:1px solid black;
-    padding-bottom:10px;
-}
-
-.preview{
-    font-size:1rem;
-    line-height:1.5;
-}
-
-.content{
+.hidden-content{
     max-height:0;
     overflow:hidden;
     transition:max-height 0.6s ease;
-    margin-top:15px;
-    border-top:1px dashed black;
+    background:#e6dfd1;
+    margin-top:10px;
+    padding:0 10px;
+    border-left:3px solid black;
 }
 
-.content p{
-    margin-top:15px;
-    line-height:1.7;
+.hidden-content p{
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
-footer{
-    margin-top:40px;
-    padding:20px;
-    text-align:center;
+.divider{
+    border-top:1px solid black;
+    margin:10px 0;
+}
+
+.footer{
+    margin-top:20px;
     border-top:3px double black;
-    font-size:0.9rem;
-    background:#ddd6c8;
+    padding:10px;
+    text-align:center;
+    font-size:13px;
 }
 
-@media(max-width:700px){
+@media(max-width:900px){
 
-header h1{
-    font-size:2.5rem;
+.layout{
+    grid-template-columns:1fr;
+}
+
+.logo{
+    font-size:52px;
 }
 
 .article h2{
-    font-size:1.5rem;
+    font-size:34px;
 }
 
 }
@@ -128,135 +157,190 @@ header h1{
 
 <body>
 
-<header>
+<div class="page">
 
-<h1>JOURNAL RAT RACE</h1>
+<div class="topline">
+REVOLUTIONÄRE PHILOSOPHISCHE ARBEITERZEITUNG
+</div>
 
-<div class="subline">
+<div class="logo">
+Journal Rat Race
+</div>
+
+<div class="subtitle">
 „Scheiß Gesellschaft macht mich krank, ich bin ein Punk.“
 </div>
 
-<div class="info">
-Ausgabe #1 — 2026 — Revolutionäre philosophische Arbeiterzeitung
+<div class="meta">
+<div>Ausgabe #1</div>
+<div>2026</div>
+<div>São Paulo</div>
 </div>
 
-</header>
+<div class="layout">
 
-<img src="RatRace.png" class="hero-image">
+<div class="column">
 
-<div class="container">
+<div class="article" onclick="toggle(this)">
+<h2 class="side-title">Pix — eine sozialistische Maßnahme?</h2>
 
-<div class="grid">
+<p class="fake-text">
+Digitale Infrastruktur, Bankenlogik,
+gesellschaftliche Organisation, staatliche Systeme,
+Transaktionsfreiheit, Profitinteressen,
+neue Widersprüche moderner Ökonomie.
+</p>
 
-<div class="article" onclick="toggleArticle(this)">
+<div class="hidden-content">
+<p>
+Pix zeigt, dass zentrale Infrastruktur auch außerhalb klassischer Marktlogik funktionieren kann.
+Millionen Menschen verwenden täglich ein System,
+das unmittelbar und nahezu kostenlos funktioniert.
+</p>
+</div>
+
+<div class="divider"></div>
+</div>
+
+<div class="article" onclick="toggle(this)">
+<h2 class="side-title">Meine Lieblingsmemes</h2>
+
+<p class="fake-text">
+Digitale Kultur, kollektive Depression,
+Ironie, Entfremdung, politische Symbolik,
+Internet als spontane Volkskommunikation.
+</p>
+
+<div class="hidden-content">
+<p>
+Memes funktionieren oft schneller als klassische politische Kommunikation.
+Sie verdichten Widersprüche in Sekunden.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="column">
+
+<img src="DEINBILD.jpg" class="hero-image">
+
+<div class="article" onclick="toggle(this)">
+
 <h2>Gründe antikapitalistisch zu sein</h2>
 
-<div class="preview">
-KEINE AI
-</div>
+<p class="fake-text">
+Eigentumsverhältnisse, gesellschaftliche Produktion,
+Krisen, Konkurrenz, Wohnungsfrage,
+Entfremdung, Arbeitszwang, psychische Belastung,
+globale Ungleichheit und ideologische Kontrolle.
+</p>
 
-<div class="content">
+<p class="fake-text">
+Produktivität steigt, dennoch verschärfen sich
+Unsicherheit und Isolation. Reichtum konzentriert sich,
+während soziale Systeme unter Druck geraten.
+</p>
+
+<div class="hidden-content">
 <p>
-KEINE AI
+Der Kapitalismus organisiert Produktion nicht nach Bedürfnissen,
+sondern nach Profitabilität.
 </p>
 
 <p>
-KEINE AI
-</p>
-</div>
-</div>
-
-<div class="article" onclick="toggleArticle(this)">
-<h2>Pix — eine sozialistische Maßnahme</h2>
-
-<div class="preview">
-KEINE AI
-</div>
-
-<div class="content">
-<p>
-KEINE AI
+Es existieren gleichzeitig Leerstand und Obdachlosigkeit,
+Überproduktion und Hunger.
 </p>
 
 <p>
-KEINE AI
+Die Frage lautet daher nicht,
+ob genug produziert wird —
+sondern wem Produktionsmittel gehören
+und nach welchen Interessen produziert wird.
 </p>
 </div>
+
 </div>
 
-<div class="article" onclick="toggleArticle(this)">
-<h2>Meinung: Manfred die Ratte will nicht mehr</h2>
-
-<div class="preview">
-KEINE AI
 </div>
 
-<div class="content">
-<p>
-KEINE AI
+<div class="column">
+
+<div class="article" onclick="toggle(this)">
+<h2 class="side-title">Manfred die Ratte will nicht mehr</h2>
+
+<p class="fake-text">
+Erschöpfung, Hamsterrad,
+moderne Arbeitsgesellschaft,
+innere Leere, Wiederholung,
+Verweigerung und Selbstbehauptung.
 </p>
 
+<div class="hidden-content">
 <p>
-KEINE AI
-</p>
-</div>
-</div>
-
-<div class="article" onclick="toggleArticle(this)">
-<h2>Meine Lieblingsmemes</h2>
-
-<div class="preview">
-KEINE AI
-</div>
-
-<div class="content">
-<p>
-KEINE AI
+Manfred erkennt,
+dass sein gesamtes Leben nur noch
+der Reproduktion seiner Arbeitskraft dient.
 </p>
 
 <p>
-KEINE AI
+Die Ratte lehnt nicht das Leben ab —
+sie lehnt das Rad ab.
 </p>
 </div>
+
+<div class="divider"></div>
+
 </div>
 
-<div class="article" onclick="toggleArticle(this)">
-<h2>Scheiß Gesellschaft macht mich krank, ich bin ein Punk</h2>
+<div class="article" onclick="toggle(this)">
+<h2 class="side-title">Scheiß Gesellschaft macht mich krank, ich bin ein Punk</h2>
 
-<div class="preview">
-KEINE AI
-</div>
+<p class="fake-text">
+Normierung, Isolation,
+Leistungsdruck, Anpassungszwang,
+Wut, Subkultur, psychischer Widerstand,
+kollektive Ablehnung gesellschaftlicher Kälte.
+</p>
 
-<div class="content">
+<div class="hidden-content">
 <p>
-KEINE AI
+Punk war nie bloß Musik.
 </p>
 
 <p>
-KEINE AI
+Es war immer auch die Weigerung,
+sich vollständig in ökonomische Funktionen verwandeln zu lassen.
 </p>
 </div>
-</div>
 
 </div>
 
 </div>
 
-<footer>
-Journal Rat Race — lass uns Revolution spielen
-</footer>
+</div>
+
+<div class="footer">
+Journal Rat Race — Gegen Entfremdung und das Hamsterrad.
+</div>
+
+</div>
 
 <script>
 
-function toggleArticle(article){
+function toggle(article){
 
-const content = article.querySelector(".content");
+const content = article.querySelector(".hidden-content");
 
 if(content.style.maxHeight){
     content.style.maxHeight = null;
+    content.style.padding = "0 10px";
 }
 else{
     content.style.maxHeight = content.scrollHeight + "px";
+    content.style.padding = "10px";
 }
 
 }
